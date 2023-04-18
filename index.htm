@@ -13,53 +13,126 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- Fonts -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+        </style>
+
+
         <title>WedInvite</title>
     </head>
     <body>
+    
+        <div class="container-fluid m-0 p-0">
         
-        <nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color:rgba(255,255,255,.6);">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <nav class="navbar navbar-expand-lg shadow w-100 position-fixed menu">
+                <div class="container-fluid">
+                    <a class="navbar-brand cursiva" href="#"><h1>Uno & Dos</h1></a>
+                    <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                            </li>
                         </ul>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="bg-primary vh-100 vw-100 d-flex justify-content-center align-items-center bg1">
+                <div class="text-center">
+                    <h2>MENSAJE</h2>
+                    <h2 class="cursiva display-2 m-4">Uno & Dos</h2>
+                    <h3>18.04.23</h3>
                 </div>
             </div>
-        </nav>
 
-        <div class="bg-primary vh-100 vw-100">
-            test
-        </div>
-        <div class="bg-secondary vh-100 vw-100">
-            test
-        </div>
+            <div class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3" style="height:50vh;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio aliquid dolor placeat atque ipsa, quasi natus voluptas nobis ad in animi veniam fuga sint voluptatem necessitatibus cum non repellat adipisci.
+            </div>
 
+            <div class="bg-primary vh-100 vw-100 d-flex justify-content-center align-items-center bg2">
+                <div class="text-center">
+                    <h2 class="cursiva">El Día</h2>
+
+                    <div id="dia"></div>
+
+                    <span id="days"></span> días / <span id="hours"></span> horas / <span id="minutes"></span> minutos / <span id="seconds"></span> segundos
+                </div>
+            </div>
+
+        </div>       
+       
     </body>
 </html>
+
+<script>
+    document.querySelector("#dia").innerText = ( new Date().toLocaleDateString('es-MX', { weekday:"long", year:"numeric", month:"long", day:"numeric"})  );
+
+
+    
+
+    // VARIABLES
+const DATE_TARGET = new Date('08/13/2023 08:00 PM');
+// DOM for render
+const SPAN_DAYS = document.querySelector('span#days');
+const SPAN_HOURS = document.querySelector('span#hours');
+const SPAN_MINUTES = document.querySelector('span#minutes');
+const SPAN_SECONDS = document.querySelector('span#seconds');
+// Milliseconds for the calculations
+const MILLISECONDS_OF_A_SECOND = 1000;
+const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+// FUNCTIONS
+function updateCountdown() {
+    // Calcs
+    const NOW = new Date()
+    const DURATION = DATE_TARGET - NOW;
+    const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+    const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+    const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+    const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+    // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
+
+    // Render
+    SPAN_DAYS.textContent = REMAINING_DAYS;
+    SPAN_HOURS.textContent = REMAINING_HOURS;
+    SPAN_MINUTES.textContent = REMAINING_MINUTES;
+    SPAN_SECONDS.textContent = REMAINING_SECONDS;
+}
+
+
+
+// INIT
+updateCountdown();
+// Refresh every second
+setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+
+
+
+
+</script>
