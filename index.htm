@@ -21,136 +21,259 @@
             @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
         </style>
 
-
         <title>WedInvite</title>
     </head>
-    <body>
+    <body id="ini" class="bg-pri txt-sec">
     
         <div class="container-fluid m-0 p-0">
         
-            <nav class="navbar navbar-expand-lg shadow w-100 position-fixed menu">
+            <nav class="navbar navbar-expand-lg shadow w-100 position-fixed menu navbar-fixed-top p-0" style="z-index:1000;">
                 <div class="container-fluid">
-                    <a class="navbar-brand cursiva" href="#"><h1>Uno & Dos</h1></a>
+                    <a class="navbar-brand cursiva txt-pri" href="#ini"><h1 class="m-0">Susana & Adrián</h1></a>
                     <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" href="#menu-dia">Día</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                                <a class="nav-link" href="#menu-itinerario">Itinerario</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                                <a class="nav-link" href="#menu-cuando">Cuándo & Dónde</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#menu-info">Información</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#menu-galeria">Galería</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <div class="bg-primary vh-100 vw-100 d-flex justify-content-center align-items-center bg1">
+            <section class="bg-primary vh-100 vw-100 d-flex justify-content-center align-items-center bg1">
                 <div class="text-center">
-                    <h2>MENSAJE</h2>
-                    <h2 class="cursiva display-2 m-4">Uno & Dos</h2>
-                    <h3>18.04.23</h3>
+                    <h2>NOS CASAMOS</h2>
+                    <h2 class="cursiva display-2 m-4">Susana & Adrián</h2>
+                    <h3>01.09.23</h3>
                 </div>
-            </div>
+            </section>
 
-            <div class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3" style="height:50vh;">
+            <section class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3" style="height:50vh;">
                 <div class="container p-4">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio aliquid dolor placeat atque ipsa, quasi natus voluptas nobis ad in animi veniam fuga sint voluptatem necessitatibus cum non repellat adipisci.
                 </div>
-            </div>
+            </section>
 
-            <div class="bg-primary vw-100 d-flex justify-content-center align-items-center bg2 py-5">
+            <section id="menu-dia" class="bg-primary vw-100 d-flex justify-content-center align-items-center bg2 py-5">
                 <div class="text-center">
-                    <h2 class="cursiva">El Día</h2>
+                    <h2 class="cursiva">Nuestro Día</h2>
 
                     <div id="dia" class="m-4"></div>
+                    Viernes, 01 de Septiembre de 2023
 
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="card bg-transparent m-3">
-                                <span id="days" class="display-1 mt-4 cursiva"></span>
-                                <div class="card-body">
+                        <div class="col-12 col-sm-6">
+                            <div class="card bg-transparent m-3" style="border:none;">
+                                <span id="days" class="display-1 mt-4 cursiva txt-light"></span>
+                                <div class="card-body pt-0">
                                     <h5 class="card-title">días</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card bg-transparent m-3">
-                                <span id="hours" class="display-1 mt-4 cursiva"></span>
-                                <div class="card-body">
+                        <div class="col-12 col-sm-6">
+                            <div class="card bg-transparent m-3" style="border:none;">
+                                <span id="hours" class="display-1 mt-4 cursiva txt-light"></span>
+                                <div class="card-body pt-0">
                                     <h5 class="card-title">Horas</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card bg-transparent m-3">
-                                <span id="minutes" class="display-1 mt-4 cursiva"></span>
-                                <div class="card-body">
+                        <div class="col-12 col-sm-6">
+                            <div class="card bg-transparent m-3" style="border:none;">
+                                <span id="minutes" class="display-1 mt-4 cursiva txt-light"></span>
+                                <div class="card-body pt-0">
                                     <h5 class="card-title">Minutos</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card bg-transparent m-3">
-                                <span id="seconds" class="display-1 mt-4 cursiva"></span>
-                                <div class="card-body">
+                        <div class="col-12 col-sm-6">
+                            <div class="card bg-transparent m-3" style="border:none;">
+                                <span id="seconds" class="display-1 mt-4 cursiva txt-light"></span>
+                                <div class="card-body pt-0">
                                     <h5 class="card-title">Segundos</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
-                <div class="container p-4">
-                    <h2 class="cursiva my-5" style="color:#FBB2A9;">Itinerario</h2>
+            <section id="menu-itinerario" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
 
-                    <div class="rounded p-3 m-4" style="background-color:#fee9e7;">
-                        <h3 class="cursiva mb-4" style="color:#f87d6d;">Ceremonia</h3>
-                        <p><b>17:30</b> Horas</p> 
-                        <p><b>Lugar</b> de Monterrey</p>
+                <div class="container">
+
+                    <h2 class="cursiva mt-5 txt-light">Itinerario</h2>
+                    <div class="row">
+                        <div class="col-4 p-4 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-church display-1 txt-pri"></i>
+                        </div>
+                        <div class="col-8 p-4">
+                            <div class="d-inline-block rounded p-3 w-100 bg-sec">
+                                <h3 class="cursiva mb-4 txt-pri">Ceremonia Religiosa</h3>
+                                <p><b>19:00</b> Horas</p> 
+                                <p><a href="https://goo.gl/maps/maz3U1v1xS3HbQ4w8" target="_blank"><i class="fas fa-map-pin"></i> Parroquia de San Jeronimo De Monterrey</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 p-4 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-glass-cheers display-1 txt-pri"></i>
+                        </div>
+                        <div class="col-8 p-4">
+                            <div class="d-inline-block rounded p-3 w-100 bg-sec">
+                                <h3 class="cursiva mb-4 txt-pri">Recepción</h3>
+                                <p><b>21:00</b> Horas</p> 
+                                <p><a href="https://goo.gl/maps/HYTrgtR2RFMmqhuv6" target="_blank"><i class="fas fa-map-pin"></i> LUX Eventos - Salón Panorámico</a></p>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>        
+
+            </section>
+
+            <!--CUANDO DONDE-->
+            <section id="menu-cuando" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+                <div class="container">
+
+                    <h2 class="cursiva mt-5 txt-light">¿Cuándo & Dónde?</h2>
+                    <div class="container p-4">
+                            A continuación encontrarás el horario y ubicación de los eventos de nuestra boda, así como un botón directo a Google Maps para que te sea más fácil llegar al lugar.
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-3 p-0 m-0 d-flex align-items-stretch">
+                            <img src="img/iglesia.jpg" class="img-fluid" alt="Parroquia de San Jeronimo De Monterrey">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 p-0 m-0 d-flex align-items-stretch">
+                            <div class="d-inline-block p-3 w-100 bg-sec">
+                                <h3 class="cursiva mb-4 txt-pri">Iglesia</h3>
+                                <div class="txt-pri">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <BR>
+                                    VIERNES <BR>
+                                    01 DE SEPTIEMBRE <br>
+                                    DE 2023 <br>
+                                    <i class="far fa-clock"></i>
+                                    <p><b>19:00</b> Horas</p> 
+                                </div>
+                                <p><a href="https://goo.gl/maps/maz3U1v1xS3HbQ4w8" target="_blank"><i class="fas fa-map-pin"></i> Parroquia de San Jeronimo De Monterrey</a></p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-6 col-md-3 p-0 m-0 d-flex align-items-stretch">
+                            <img src="img/salon.jpg" class="img-fluid" alt="LUX Eventos - Salón Panorámico">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 p-0 m-0 d-flex align-items-stretch">
+                            <div class="d-inline-block p-3 w-100 bg-sec">
+                                <h3 class="cursiva mb-4 txt-pri">Salón</h3>
+                                <div class="txt-pri">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <BR>
+                                    VIERNES <BR>
+                                    01 DE SEPTIEMBRE <br>
+                                    DE 2023 <br>
+                                    <i class="far fa-clock"></i>
+                                    <p><b>21:00</b> Horas</p> 
+                                </div>
+                                <p><a href="https://goo.gl/maps/HYTrgtR2RFMmqhuv6" target="_blank"><i class="fas fa-map-pin"></i> LUX Eventos - Salón Panorámico</a></p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="rounded p-3 m-4" style="background-color:#fee9e7;">
-                        <h3 class="cursiva mb-4" style="color:#f87d6d;">Recepción</h3>
-                        <p><b>21:00</b> Horas</p> 
-                        <p><b>Lugar</b> de Monterrey</p>
+                </div>   
+            </section>
+
+            <!--INFORMACION-->
+            <section id="menu-info" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+                <div class="container">
+
+                    <h2 class="cursiva my-4 txt-pri">Regalos</h2>
+                    <div class="container p-4">
+                        <i class="far fa-envelope display-1 txt-pri"></i>
+                        <br>
+                        Sobre
                     </div>
 
+                    <h2 class="cursiva my-4 txt-pri">Código de Vestimenta</h2>
+                    <div class="container p-4">
+                        <i class="fas fa-user-tie display-1 txt-pri"></i>
+                        <br>
+                        Formal
+                    </div>
 
-                </div>
-            </div>
+                </div>    
+            </section>
+
+            <!--GALERIA-->
+            <section id="menu-galeria" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+                <div class="container">
+
+                    <h2 class="cursiva mt-4 txt-light">Galería</h2>
+                    <div class="container p-4">
+
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1000" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1001" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1002" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1003" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1004" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1005" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1006" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 p-3">
+                                <img src="https://picsum.photos/1007" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>    
+            </section>
 
         </div>       
        
     </body>
 </html>
 
+
 <script>
-    document.querySelector("#dia").innerText = ( new Date().toLocaleDateString('es-MX', { weekday:"long", year:"numeric", month:"long", day:"numeric"})  );
+    //document.querySelector("#dia").innerText = ( new Date().toLocaleDateString('es-MX', { weekday:"long", year:"numeric", month:"long", day:"numeric"})  );
 
 
     
 
     // VARIABLES
-const DATE_TARGET = new Date('08/13/2023 08:00 PM');
+const DATE_TARGET = new Date('09/01/2023 07:00 PM');
 // DOM for render
 const SPAN_DAYS = document.querySelector('span#days');
 const SPAN_HOURS = document.querySelector('span#hours');
@@ -186,8 +309,5 @@ function updateCountdown() {
 updateCountdown();
 // Refresh every second
 setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
-
-
-
 
 </script>
