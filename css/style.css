@@ -44,7 +44,7 @@ body {
 .bg1 {
     background-color: var(--c-bg-pri);
     background-image: linear-gradient(rgba(255, 255, 255, .3),
-    rgba(0, 0, 0, 0.7)), url('./img/img1.jpg');
+    rgba(0, 0, 0, 0.7)), url('/img/img1.jpg');
     background-repeat: no-repeat;
     background-position:center top;
     background-size: cover;
@@ -54,7 +54,7 @@ body {
 .bg2 {
     background-color: var(--c-bg-pri);
     background-image: linear-gradient(rgba(255, 255, 255, .3),
-    rgba(0, 0, 0, 0.7)), url('./img/img2.jpg');
+    rgba(0, 0, 0, 0.7)), url('/img/img2.jpg');
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
