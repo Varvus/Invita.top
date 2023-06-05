@@ -43,16 +43,16 @@ body {
 
 .bg1 {
     background-image: linear-gradient(rgba(255, 255, 255, .3),
-    rgba(0, 0, 0, 0.7)), url('/img/boda1.jpeg');
+    rgba(0, 0, 0, 0.7)), url('/img/img1.jpg');
     background-repeat: no-repeat;
-    background-position:center;
+    background-position:center top;
     background-size: cover;
     background-attachment: fixed;
 }
 
 .bg2 {
     background-image: linear-gradient(rgba(255, 255, 255, .3),
-    rgba(0, 0, 0, 0.7)), url('/img/boda2.jpeg');
+    rgba(0, 0, 0, 0.7)), url('/img/img2.jpg');
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
@@ -71,3 +71,16 @@ a:hover {
     background-color: var(--c-bg-sec);
     transition: all .6s ease;;
 }
+
+.img-galeria {
+    filter: contrast(65%);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .6s ease;
+} 
+.img-galeria:hover {
+    filter: contrast(110%);
+} 
+
+
