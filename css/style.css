@@ -41,6 +41,16 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 
+.bg-init {
+    background-color: var(--c-bg-pri);
+    background-image: linear-gradient(rgba(255, 255, 255, .3),
+    rgba(0, 0, 0, 0.7)), url('../img/savethedate.jpg');
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .bg1 {
     background-color: var(--c-bg-pri);
     background-image: linear-gradient(rgba(255, 255, 255, .3),
