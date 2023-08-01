@@ -238,6 +238,24 @@
                 </div>    
             </section>
 
+            <!--Asistencia-->
+            <section id="menu-galeria" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+                <div class="container">
+
+                    <h2 class="cursiva mt-4 txt-light">Asistencia</h2>
+                    <p>Confirma tu Asistencia seleccionando tu nombre y la cantidad de asistentes</p>
+                    <div class="container p-4">
+                        <select class="form-select" aria-label="Asistencia">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+
+                </div>    
+            </section>
+
             <!--GALERIA-->
             <section id="menu-galeria" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
                 <div class="container">
