@@ -320,9 +320,16 @@ function updateCountdown() {
     const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
     const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
     const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
-    // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
 
     // Render
+    if (REMAINING_DAYS <= 0 && REMAINING_HOURS <= 0 && REMAINING_MINUTES <= 0 && REMAINING_SECONDS <= 0){
+        SPAN_DAYS.textContent = 0;
+        SPAN_HOURS.textContent = 0;
+        SPAN_MINUTES.textContent = 0;
+        SPAN_SECONDS.textContent = 0;
+        return;
+    }
+
     SPAN_DAYS.textContent = REMAINING_DAYS;
     SPAN_HOURS.textContent = REMAINING_HOURS;
     SPAN_MINUTES.textContent = REMAINING_MINUTES;
