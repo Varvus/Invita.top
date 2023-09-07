@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include 'connect.php';
 
@@ -39,6 +40,8 @@ while ($fila = mysqli_fetch_assoc($resultado)) {
 }
 ?>
 
+=======
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -309,6 +312,7 @@ while ($fila = mysqli_fetch_assoc($resultado)) {
 
                     <h2 class="cursiva my-4 txt-pri">Recomendación de los Novios</h2>
                     <div class="container p-4">
+<<<<<<< HEAD
                         <img src="img/tenis.jpg" alt="Tenis" width=130>
                         <br>
                         (Todos Formal Tenis Blancos)
@@ -318,10 +322,27 @@ while ($fila = mysqli_fetch_assoc($resultado)) {
 
             <!--ASISTENCIA-->
             <section id="asistencia" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+=======
+                        <img src="img/tenis.jpeg" alt="Tenis" width=100>
+                        <br>
+                        (Todos Formal Tenis Blancos)
+                    </div>
+
+                    <p>En esta ocasión, nuestra invitación no podemos extenderla a los niños. Gracias por su comprensión.</p>
+
+<<<<<<<< HEAD:Susana-Adrian.htm
+========
+                </div>    
+            </section>
+
+            <!--Asistencia-->
+            <section id="menu-galeria" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
                 <div class="container">
 
                     <h2 class="cursiva mt-4 txt-light">Asistencia</h2>
                     <p>Confirma tu Asistencia seleccionando tu nombre y la cantidad de asistentes</p>
+<<<<<<< HEAD
                     <p>En esta ocasión, nuestra invitación no podemos extenderla a los niños. Gracias por su comprensión</p>
                     <form method="post" action="#asistencia">
                         <label for="nombre" class="m-2">Nombre:
@@ -355,6 +376,18 @@ while ($fila = mysqli_fetch_assoc($resultado)) {
                     include connection-close.php;
                     ?>
 
+=======
+                    <div class="container p-4">
+                        <select class="form-select" aria-label="Asistencia">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+
+>>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427:susana-adrian.php
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
                 </div>    
             </section>
 
@@ -422,7 +455,10 @@ function updateCountdown() {
     const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
     const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
     const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+<<<<<<< HEAD
     // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
+=======
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
 
     // Render
     if (REMAINING_DAYS <= 0 && REMAINING_HOURS <= 0 && REMAINING_MINUTES <= 0 && REMAINING_SECONDS <= 0){
@@ -432,7 +468,11 @@ function updateCountdown() {
         SPAN_SECONDS.textContent = 0;
         return;
     }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
     SPAN_DAYS.textContent = REMAINING_DAYS;
     SPAN_HOURS.textContent = REMAINING_HOURS;
     SPAN_MINUTES.textContent = REMAINING_MINUTES;
@@ -446,4 +486,8 @@ updateCountdown();
 // Refresh every second
 setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
 
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427

@@ -44,8 +44,13 @@
                 echo "<tr>";
                 echo "<th>Clave</th>";
                 echo "<th>Nombre</th>";
+<<<<<<< HEAD
                 echo "<th>Invitados</th>";
                 echo "<th>Asistentes</th>";
+=======
+                echo "<th>Cantidad de Invitados</th>";
+                echo "<th>Cantidad de Invitados (si)</th>";
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
                 echo "<th>Teléfono</th>";
                 echo "</tr>";
             
@@ -73,4 +78,7 @@
        
     </body>
 </html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 75df6fca0d177797a2036f09ef2b2924b6479427
