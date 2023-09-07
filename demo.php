@@ -1,3 +1,39 @@
+<?php
+include 'connect.php';
+
+// Función para obtener la cantidad de invitados según el nombre seleccionado
+function obtenerCantidadInvitados($conexion, $nombreSeleccionado)
+{
+    $consulta = "SELECT cant_inv_si FROM sus_adr WHERE nombre = '$nombreSeleccionado'";
+    $resultado = mysqli_query($conexion, $consulta);
+    if ($fila = mysqli_fetch_assoc($resultado)) {
+        return $fila['cant_inv_si'];
+    }
+    return 0;
+}
+
+// Procesar el formulario cuando se envíe
+$mensajeExito = ""; // Variable para almacenar el mensaje de éxito
+if (isset($_POST['submit'])) {
+    $nombreSeleccionado = $_POST['nombre'];
+    $cantidadInvitadosSi = $_POST['cant_inv'];
+    $telefono = $_POST['telefono'];
+
+    // Actualizar la cantidad de invitados y el teléfono si existe un nombre seleccionado
+    if (!empty($nombreSeleccionado)) {
+            $mensajeExito = "¡Gracias por confirmar su asistencia!";
+    }
+}
+
+// Obtener todos los datos de la tabla en un arreglo
+$consulta = "SELECT nombre, cant_inv, cant_inv_si FROM sus_adr  ORDER BY nombre";
+$resultado = mysqli_query($conexion, $consulta);
+$datosTabla = array();
+while ($fila = mysqli_fetch_assoc($resultado)) {
+    $datosTabla[] = $fila;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -22,8 +58,45 @@
         </style>
 
         <title>Invita.Top - Susana y Adrián</title>
+        
+        <script>
+        // Arreglo para almacenar los datos de la tabla
+        var datosTabla = <?php echo json_encode($datosTabla); ?>;
+
+        function actualizarSelects() {
+            var nombreSelect = document.getElementById('nombre');
+            var cantInvSelect = document.getElementById('cant_inv');
+
+            // Obtener el nombre seleccionado
+            var nombreSeleccionado = nombreSelect.value;
+
+            // Limpiar el select de cant_inv
+            cantInvSelect.innerHTML = '';
+
+            // Buscar los datos del nombre seleccionado en el arreglo
+            var datosSeleccionados = datosTabla.find(function (dato) {
+                return dato.nombre === nombreSeleccionado;
+            });
+
+            if (datosSeleccionados) {
+                var cantInv = parseInt(datosSeleccionados.cant_inv);
+
+                // Agregar las opciones al select de cant_inv
+                for (var i = 0; i <= cantInv; i++) {
+                    var option = document.createElement('option');
+                    option.value = i;
+                    option.text = i;
+                    cantInvSelect.appendChild(option);
+                }
+
+                // Seleccionar la cantidad de invitados actual si está definida
+                var cantInvSi = parseInt(datosSeleccionados.cant_inv_si);
+                cantInvSelect.value = isNaN(cantInvSi) ? 0 : cantInvSi;
+            }
+        }
+    </script>
     </head>
-    <body id="ini" class="bg-pri txt-sec">
+    <body id="ini" class="bg-pri txt-sec"  onload="actualizarSelects()">
     
         <div class="container-fluid m-0 p-0">
         
@@ -47,6 +120,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#menu-info">Información</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#asistencia">Asistencia</a>
+                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="#menu-galeria">Galería</a>
                             </li>
@@ -141,7 +218,7 @@
                         <div class="col-8 p-4">
                             <div class="d-inline-block rounded p-3 w-100 bg-sec">
                                 <h3 class="cursiva mb-4 txt-pri">Recepción</h3>
-                                <p><b>21:00</b> Horas</p> 
+                                <p><b>20:30</b> Horas</p> 
                                 <p><a href="https://goo.gl/maps/HYTrgtR2RFMmqhuv6" target="_blank"><i class="fas fa-map-pin"></i> LUX Eventos - Salón Panorámico</a></p>
                             </div>
                         </div>
@@ -220,20 +297,58 @@
 
                     <h2 class="cursiva my-4 txt-pri">Código de Vestimenta</h2>
                     <div class="container p-4">
-                        <img src="img/smoking.jpg" alt="Smoking" width=100>
-                        <img src="img/vestido.jpg" alt="Vestido" width=70>
+                        <img src="img/vestimenta.jpg" alt="Vestimenta" width=120>
                         <br>
                         Formal
                     </div>
 
                     <h2 class="cursiva my-4 txt-pri">Recomendación de los Novios</h2>
                     <div class="container p-4">
-                        <img src="img/tenis.jpeg" alt="Tenis" width=100>
+                        <img src="img/tenis.jpg" alt="Tenis" width=130>
                         <br>
                         (Todos Formal Tenis Blancos)
                     </div>
+                </div>    
+            </section>
 
-                    <p>En esta ocasión, nuestra invitación no podemos extenderla a los niños. Gracias por su comprensión.</p>
+            <!--ASISTENCIA-->
+            <section id="asistencia" class="bg-white vw-100 text-center text-dark d-flex justify-content-center align-items-center p-3">
+                <div class="container">
+
+                    <h2 class="cursiva mt-4 txt-light">Asistencia</h2>
+                    <p>Confirma tu Asistencia seleccionando tu nombre y la cantidad de asistentes</p>
+                    <p>En esta ocasión, nuestra invitación no podemos extenderla a los niños. Gracias por su comprensión</p>
+                    <form method="post" action="#asistencia">
+                        <label for="nombre" class="m-2">Nombre:
+                        <select class="form-select" name="nombre" id="nombre" onchange="actualizarSelects()">
+                            <option value="">Seleccione un nombre</option>
+                            <?php
+                            // Cargar el select con los nombres y cantidades de invitados
+                            foreach ($datosTabla as $filaNombre) {
+                                $nombre = $filaNombre['nombre'];
+                                echo "<option value=\"$nombre\"";
+                                echo ">$nombre</option>";
+                            }
+                            ?>
+                        </select></label>
+                
+                        <label for="cant_inv" class="m-2">Asistentes:
+                        <select class="form-select" name="cant_inv" id="cant_inv">
+                        </select></label>
+                
+                        <label for="telefono" class="m-2">Teléfono:
+                        <input class="form-control" type="number" name="telefono" id="telefono" /></label>
+                
+                        <input class="btn btn-outline-primary m-2" type="submit" name="submit" value="Guardar" />
+                    </form>
+                
+                    <!-- Mostrar el mensaje de éxito si existe -->
+                    <?php
+                    if (!empty($mensajeExito)) {
+                        echo "<div class='alert alert-success m-2'>$mensajeExito</div>";
+                    }
+                    include connection-close.php;
+                    ?>
 
                 </div>    
             </section>
@@ -281,7 +396,7 @@
 <script>
 
     // VARIABLES
-const DATE_TARGET = new Date('09/01/2023 07:00 PM');
+const DATE_TARGET = new Date('09/01/2024 07:00 PM');
 // DOM for render
 const SPAN_DAYS = document.querySelector('span#days');
 const SPAN_HOURS = document.querySelector('span#hours');
@@ -305,6 +420,13 @@ function updateCountdown() {
     // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
 
     // Render
+    if (REMAINING_DAYS <= 0 && REMAINING_HOURS <= 0 && REMAINING_MINUTES <= 0 && REMAINING_SECONDS <= 0){
+        SPAN_DAYS.textContent = 0;
+        SPAN_HOURS.textContent = 0;
+        SPAN_MINUTES.textContent = 0;
+        SPAN_SECONDS.textContent = 0;
+        return;
+    }
     SPAN_DAYS.textContent = REMAINING_DAYS;
     SPAN_HOURS.textContent = REMAINING_HOURS;
     SPAN_MINUTES.textContent = REMAINING_MINUTES;
