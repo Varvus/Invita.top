@@ -1,54 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-        <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/95127a07f0.js" crossorigin="anonymous"></script>
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/95127a07f0.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+    </style>
 
-        <!-- Fonts -->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-        </style>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
-        </style>
+    <title>Invita.Top</title>
+</head>
+<body id="ini" class="bg-pri txt-sec">
 
-        <title>Invita.Top</title>
-    </head>
-    <body id="ini" class="bg-pri txt-sec bg-init">
-    
-        <div class="container-fluid m-0 p-0">
-        
-            <section class="vh-100  vw-100 d-flex justify-content-center align-items-center ">
-                <div class="text-center">
+    <div class="container-fluid m-0 p-0">
+        <section class="bg-init vh-100 w-100 d-flex justify-content-center align-items-center ">
+            <div class="text-center">
+                <h1 class="cursiva display-2 m-4">Invita.Top</h1>
+                <video autoplay loop muted playsinline style="width:100%; max-width: 600px; object-fit: cover; border:5px white solid;">
+                    <source src="img/invita.mp4" type="video/mp4">
+                    Tu explorador no soporta el video.
+                </video>
+                <p class="my-4">
+                    <i class="fas fa-envelope"></i> <a href="mailto:contacto@invita.top">contacto@invita.top</a>
+                </p>
+            </div>
+        </section>
 
-                    <div class="">
-                        <h1 class="cursiva display-2 m-4">Invita.Top</h1>
-                        
-                    </div>
-
-                    <video autoplay loop muted playsinline style="width:100%; max-width: 600px; object-fit: cover; border:5px white solid;">
-                        <source src="img/invita.mp4" type="video/mp4">
-                        Tu explorador no soporta el video.
-                    </video>
-
-                    <p class="my-4">
-                        <i class="fas fa-envelope"></i> <a href="mailto:contacto@invita.top">contacto@invita.top</a>
-                    </p>
-                    
+        <!-- Contacto -->
+        <div class="container bg-pri txt-pri my-4 mx-auto">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
                 </div>
-            </section>
+                <div class="form-group">
+                    <label for="evento">Tipo de Evento:</label>
+                    <select class="form-control" id="evento" name="evento" required>
+                        <option value="">Selecciona un evento</option>
+                        <option value="cumpleaños">Cumpleaños</option>
+                        <option value="boda">Boda</option>
+                        <option value="corporativo">Evento Corporativo</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="detalles">Detalles:</label>
+                    <textarea class="form-control" id="detalles" name="detalles" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <div id="message" class="mt-3"></div>
+        </div>
+    </div>     
 
-        </div>       
-       
-    </body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío normal del formulario
+
+        const formData = new FormData(this); // Crear un objeto FormData con los datos del formulario
+
+        fetch('sendmail.php', { // URL del script PHP
+            method: 'POST',
+            body: formData // Enviar los datos del formulario
+        })
+        .then(response => response.text()) // Obtener la respuesta como texto
+        .then(data => {
+            document.getElementById('message').innerHTML = data; // Mostrar el mensaje devuelto
+            this.reset(); // Resetea el formulario
+        })
+        .catch(error => {
+            document.getElementById('message').innerHTML = "Error al enviar el mensaje.";
+            console.error('Error:', error);
+        });
+    });
+    </script>
+</body>
 </html>
-
