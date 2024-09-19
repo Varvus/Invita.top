@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Configurar destinatario y asunto
-    $destinatario = "tu_correo@ejemplo.com"; // Cambia esto por tu dirección de correo
+    $destinatario = "contacto@invita.top"; // Cambia esto por tu dirección de correo
     $asunto = "Nuevo mensaje de contacto";
 
     // Mensaje
